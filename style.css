@@ -1,0 +1,216 @@
+/* Fil rouge : selecteur, dimensions, couleurs */
+/* text */
+/* background */
+/* boxes */
+/* positioning */
+/* flex  */
+/* grid  */
+/* pseudo class */
+/* débug */
+/* responsives */
+
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+
+@font-face {
+  font-family: "font-1;";
+  src: url(./assets/LuckiestGuy-Regular.ttf);
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  border: 2px solid red;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "font-1", serif;
+  background: url(./assets/bg2.jpg) no-repeat fixed center/cover;
+  height: 100vh;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 3rem;
+  color: #212199d9;
+  text-shadow: 3px 5px 0 rgb(98 159 221 / 36%);
+  text-align: center;
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: bold;
+}
+main {
+  background: rgba(84, 99, 180, 0.479);
+  width: 85%;
+  min-height: 500px;
+  color: rgba(239, 239, 243, 0.603);
+  border-radius: 25px;
+  padding: 20px;
+  margin: 0 auto;
+  box-shadow: 5px 6px 2px #1d4a7b5e;
+}
+.positioning,
+.flexbox,
+.grid {
+  border: 2px solid rgba(146, 158, 224, 0.363);
+  margin: 10px;
+  padding-top: 10px;
+  border-radius: 25px;
+
+  height: 200px;
+}
+.grid {
+  height: 300px;
+}
+/* positioning */
+
+.positioning {
+  position: relative;
+  color: rgba(255, 255, 255, 0.527);
+}
+h2 {
+  margin: 10px;
+  text-align: center;
+}
+
+#circle {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 20px;
+  height: 60px;
+  width: 60px;
+  background: #0808953d;
+  padding: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  right: 110px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#rectangle {
+  height: 15px;
+  width: 25%;
+  background: #0808953d;
+  position: absolute;
+  padding: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* flexbox */
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+  font-size: 0.7rem;
+  height: 140px;
+  width: 140px;
+  background: #0808953d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.699);
+}
+
+/*grid*/
+
+.img {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 20px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "i1 i2"
+    "ta ta"
+    "bt bt";
+}
+input,
+textarea {
+  margin: 5px;
+  height: 45px;
+  border: 1px solid rgba(146, 158, 224, 0.363);
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-family: "font-1";
+  background: rgba(255, 255, 255, 0.623);
+}
+
+#firstname {
+  grid-area: i1;
+  background: rgba(255, 255, 255, 0.623);
+}
+#surname {
+  grid-area: i2;
+  background: rgba(255, 255, 255, 0.623);
+}
+textarea {
+  grid-area: ta;
+  resize: none;
+  background: rgba(255, 255, 255, 0.623);
+}
+input[type="submit"] {
+  grid-area: bt;
+  cursor: pointer;
+  background: #0808953d;
+  transition: 0.5s;
+}
+input[type="submit"]:hover {
+  background: #0808959d;
+}
+
+/*responsive media querry*/
+
+@media screen and (max-width: 1000px) {
+  .grid-container {
+    display: block;
+  }
+  #circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 780px) {
+  form {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "i1"
+      "i2"
+      "ta"
+      "bt";
+  }
+  .grid {
+    height: 500px;
+  }
+  #circle {
+    right: 0%;
+  }
+}
